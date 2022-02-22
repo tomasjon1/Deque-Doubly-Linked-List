@@ -143,23 +143,23 @@ void Deque::deleteRear()
 
 int main()
 {
-    Deque deque;
+    Deque dq;
+    cout << "Insert element '5' at rear end\n"; dq.insertRear(5);
 
-    cout << "Insert element '5' at front end\n";
-    deque.insertFront(5);
+    cout << "Insert element '10' at rear end\n";dq.insertRear(10);
 
-    cout << deque.getFront() << endl;
+    cout << "Rear end element: " << dq.getRear() << endl;
 
-    cout << "Insert element '5' at rear end\n";
-    deque.insertRear(6);
+    dq.deleteRear();
+    cout << "After deleting rear element new rear" << " is: " << dq.getRear() << endl;
 
-    cout << deque.getRear() << endl;
+    cout << "Inserting element '15' at front end \n"; dq.insertFront(15);
 
-    deque.deleteFront();
-    cout << "After deleting front element new " << "front is: " << deque.getFront() << endl;
+    cout << "Front end element: " << dq.getFront() << endl;
 
-    deque.deleteRear();
-    cout << "After deleting rear element new " << "rear is: " << deque.getRear() << endl;
+    cout << "Number of elements in Deque: "<< dq.size() << endl;
 
+    dq.deleteFront();
+    cout << "After deleting front element new " << "front is: " << dq.getFront() << endl;
 
 }
