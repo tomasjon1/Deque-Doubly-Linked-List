@@ -46,6 +46,11 @@ bool Deque::isEmpty()
     return (front == NULL);
 }
 
+int Deque::size()
+{
+    return Size;
+}
+
 
 void Deque::insertFront(int data)
 {
