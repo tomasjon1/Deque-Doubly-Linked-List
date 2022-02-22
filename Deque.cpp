@@ -106,6 +106,24 @@ void Deque::insertRear(int data)
     }
 }
 
+void Deque::deleteFront()
+{
+
+    if (isEmpty()) cout << "UnderFlow\n";
+
+    else
+    {
+        Node* temp = front;
+        front = front->next;
+
+        if (front == NULL) rear = NULL;
+        else               front->prev = NULL;
+        free(temp);
+
+        Size--;
+    }
+}
+
 int main()
 {
     Deque deque;
@@ -120,5 +138,8 @@ int main()
 
     cout << deque.getRear();
 
+    deque.deleteFront();
+    cout << "After deleting front element new "
+        << "front is: " << deque.getFront() << endl;
 
 }
