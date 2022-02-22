@@ -1,3 +1,7 @@
+# Time complexity
+
+Time complexity of operations like insertFront(), insertRear(), deleteFront(), deleteRear() is O(1).
+
 # Doubly linked list
 
 - Kad Deque butu su pointeriais naudojama Doubly Linked list
