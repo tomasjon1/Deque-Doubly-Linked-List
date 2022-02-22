@@ -32,6 +32,13 @@ public:
         front = rear = NULL;
         Size = 0;
     }
+
+    //Main functions
+    void insertFront(int data);
+    void insertRear(int data);
+    void deleteFront();
+    void deleteRear();
+
 };
 
 int main()
