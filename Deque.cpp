@@ -65,7 +65,6 @@ int Deque::getRear()
     return rear->data;
 }
 
-
 void Deque::insertFront(int data)
 {
     Node* newNode = Node::getnode(data);
@@ -124,6 +123,24 @@ void Deque::deleteFront()
     }
 }
 
+void Deque::deleteRear()
+{
+
+    if (isEmpty()) cout << "UnderFlow\n";
+
+    else
+    {
+        Node* temp = rear;
+        rear = rear->prev;
+
+        if (rear == NULL) front = NULL;
+        else               rear->next = NULL;
+        free(temp);
+
+        Size--;
+    }
+}
+
 int main()
 {
     Deque deque;
@@ -131,15 +148,18 @@ int main()
     cout << "Insert element '5' at front end\n";
     deque.insertFront(5);
 
-    cout << deque.getFront();
+    cout << deque.getFront() << endl;
 
     cout << "Insert element '5' at rear end\n";
     deque.insertRear(6);
 
-    cout << deque.getRear();
+    cout << deque.getRear() << endl;
 
     deque.deleteFront();
-    cout << "After deleting front element new "
-        << "front is: " << deque.getFront() << endl;
+    cout << "After deleting front element new " << "front is: " << deque.getFront() << endl;
+
+    deque.deleteRear();
+    cout << "After deleting rear element new " << "rear is: " << deque.getRear() << endl;
+
 
 }
