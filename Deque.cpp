@@ -58,6 +58,13 @@ int Deque::getFront()
     return front->data;
 }
 
+int Deque::getRear()
+{
+    if (isEmpty())
+        return -1;
+    return rear->data;
+}
+
 
 void Deque::insertFront(int data)
 {
@@ -79,7 +86,39 @@ void Deque::insertFront(int data)
     }
 }
 
+void Deque::insertRear(int data)
+{
+    Node* newNode = Node::getnode(data);
+
+    if (newNode == NULL) cout << "OverFlow\n";
+    else
+    {
+        if (rear == NULL) front = rear = newNode;
+
+        else
+        {
+            newNode->prev = rear;
+            rear->next = newNode;
+            rear = newNode;
+        }
+
+        Size++;
+    }
+}
+
 int main()
 {
-    std::cout << "Hello World!\n" ;
+    Deque deque;
+
+    cout << "Insert element '5' at front end\n";
+    deque.insertFront(5);
+
+    cout << deque.getFront();
+
+    cout << "Insert element '5' at rear end\n";
+    deque.insertRear(6);
+
+    cout << deque.getRear();
+
+
 }
