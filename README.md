@@ -1,4 +1,18 @@
+# Doubly linked list
+
+- Kad Deque butu su pointeriais naudojama Doubly Linked list
+- Node (DLL) struktura
+   -  data
+   -  pointeris i prev Node
+   -  pointeris i next Node
+   -  getNode - sukurti nauja node su data bei null pointeriais
+
 # Deque
+
+- Deque struktura
+   - Node prev
+   - Node next
+   - size
 
 ## Insert in front
 
