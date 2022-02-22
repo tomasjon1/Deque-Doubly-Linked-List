@@ -51,6 +51,13 @@ int Deque::size()
     return Size;
 }
 
+int Deque::getFront()
+{
+    if (isEmpty())
+        return -1;
+    return front->data;
+}
+
 
 void Deque::insertFront(int data)
 {
