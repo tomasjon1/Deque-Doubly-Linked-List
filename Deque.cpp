@@ -2,13 +2,11 @@
 
 using namespace std;
 
-// Node of a doubly linked list
 struct Node
 {
     int data;
     Node* prev;
     Node* next;
-    // function to get new node with data and null pointers to next/prev node
     static Node* getnode(int data)
     {
         Node* newNode = (Node*)malloc(sizeof(Node));
@@ -18,14 +16,12 @@ struct Node
     }
 };
 
-//Class of deque
 class Deque
 {
     Node* front;
     Node* rear;
     int Size;
 
-//Consturctor to create empty deque
 public:
     Deque()
     {
@@ -33,13 +29,38 @@ public:
         Size = 0;
     }
 
-    //Main functions
     void insertFront(int data);
     void insertRear(int data);
     void deleteFront();
     void deleteRear();
 
+    int getFront();
+    int getRear();
+    int size();
+    bool isEmpty();
+
 };
+
+
+void Deque::insertFront(int data)
+{
+    Node* newNode = Node::getnode(data);
+   
+    if (newNode == NULL) cout << "OverFlow\n";
+    else
+    {
+        if (front == NULL) rear = front = newNode;
+
+        else
+        {
+            newNode->next = front;
+            front->prev = newNode;
+            front = newNode;
+        }
+
+        Size++;
+    }
+}
 
 int main()
 {
