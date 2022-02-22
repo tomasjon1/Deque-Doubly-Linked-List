@@ -9,7 +9,12 @@ Time complexity of operations like insertFront(), insertRear(), deleteFront(), d
    -  data
    -  pointeris i prev Node
    -  pointeris i next Node
-   -  getNode - sukurti nauja node su data bei null pointeriais
+
+## getNode
+1. Sukuriam nauja node
+2. I nauja node irasome data
+3. Prev ir Next pointerius padarome NULL
+4. Graziname nauja node
 
 # Deque
 
