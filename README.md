@@ -1,6 +1,7 @@
 # Time complexity
 
 Time complexity of operations like insertFront(), insertRear(), deleteFront(), deleteRear() is O(1).
+Time complexity of operations like erase(), print() is O(n)
 
 # Doubly linked list
 
