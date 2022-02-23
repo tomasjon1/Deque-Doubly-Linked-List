@@ -38,6 +38,11 @@ public:
     int getRear();
     int size();
     bool isEmpty();
+    void erase();
+    void print();
+
+    // viskas
+    // pasalinti viska
 
 };
 
@@ -141,9 +146,32 @@ void Deque::deleteRear()
     }
 }
 
+void Deque::erase()
+{
+    rear = NULL;
+    while (front != NULL)
+    {
+        Node* temp = front;
+        front = front->next;
+        free(temp);
+    }
+    Size = 0;
+}
+
+void Deque::print()
+{
+    rear = NULL;
+    while (front != NULL)
+    {
+        Node* temp = front;
+        cout << front->data << endl;
+        front = front->next;
+    }
+}
+
 int main()
 {
-    Deque dq;
+   /* Deque dq;
     cout << "Insert element '5' at rear end\n"; dq.insertRear(5);
 
     cout << "Insert element '10' at rear end\n";dq.insertRear(10);
@@ -160,6 +188,17 @@ int main()
     cout << "Number of elements in Deque: "<< dq.size() << endl;
 
     dq.deleteFront();
-    cout << "After deleting front element new " << "front is: " << dq.getFront() << endl;
+    cout << "After deleting front element new " << "front is: " << dq.getFront() << endl;*/
+
+    Deque dq;
+
+    dq.insertFront(10);
+    dq.insertFront(20);
+    dq.insertFront(30);
+
+    /*cout << dq.getFront() << endl;
+    cout << dq.getRear();*/
+
+    dq.print();
 
 }
